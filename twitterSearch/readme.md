@@ -9,5 +9,5 @@ This is a Python script that uses Tweepy to search Twitter search API.  Will sav
   * Requires 3 arguments: searchterm (could be # hashtag, just put in quotes), number of Tweets to collect (some arbitrary large number), and filename to save as CSV output.
 
 # Usage
-* Asusme Python is installed, pip install depenedencies (Tweepy, codecs, unicodecsv)
+* Assume Python is installed, pip install depenedencies (Tweepy, codecs, unicodecsv)
 * Run twitterSearch.py with arguments, EX: "./twitterSearch.py "#MarchMadness" 100 march.csv"
