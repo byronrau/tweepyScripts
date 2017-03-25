@@ -9,7 +9,7 @@ See individual script readmes for more details.
 1. twitterSearch.py
   * Requires 3 arguments: searchterm (could be # hashtag, just put in quotes), number of Tweets to collect (some arbitrary large number), and filename to save as CSV output.
 
-2. twitterUserTimelin.py
+2. twitterUserTimeline.py
   * Requires a users.txt file to be in same directory which contains a list of all the usernames you want to download.  See sample users.txt for example.
   * Requires 2 arguments: max number of Tweets to collect (some arbitrary large number), and filename to save as CSV output.
 
