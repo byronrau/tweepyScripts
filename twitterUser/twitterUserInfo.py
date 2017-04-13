@@ -33,7 +33,7 @@ if (not api):
 
 with open(fName, 'ab') as f:
   writer = csv.writer(f, encoding='utf-8')
-  writer.writerow(['Name','location','created_at','id_str','favourites_count','url','followers_count','time_zone','friends_count','screen_name'])
+  writer.writerow(['Name','description','location','created_at','id_str','favourites_count','url','profile_image_url_https','listed_count','followers_count','time_zone','statuses_count','friends_count','screen_name'])
 
   try:      
     user_profiles = api.lookup_users(screen_names=users)
@@ -42,7 +42,7 @@ with open(fName, 'ab') as f:
       print("No users found")
     
     for u in user_profiles:
-      writer.writerow([u.name,u.location,u.created_at,u.id_str,u.favourites_count,u.url,u.followers_count,u.time_zone,u.friends_count,u.screen_name])
+      writer.writerow([u.name,u.description,u.location,u.created_at,u.id_str,u.favourites_count,u.url,u.profile_image_url_https,u.listed_count,u.followers_count,u.time_zone,u.statuses_count,u.friends_count,u.screen_name])
 
   except tweepy.TweepError as e:
     # Just exit if any error

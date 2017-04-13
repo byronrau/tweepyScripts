@@ -94,10 +94,14 @@ with open(fName, 'ab') as f:
           break
         
         for tweet in new_tweets:
-          hashTags = getHashtags(tweet.entities.get('hashtags'))
-          mentions = getMentions(tweet.entities.get('user_mentions'))
+          try: 
+            hashTags = getHashtags(tweet.entities.get('hashtags'))
+            mentions = getMentions(tweet.entities.get('user_mentions'))
 
-          writer.writerow([tweet.user.screen_name,tweet.created_at,tweet.id_str,tweet.text,str(tweet.retweet_count),tweet.user.name, tweet.user.location, str(tweet.user.url),tweet.user.description,str(tweet.user.statuses_count),str(tweet.user.followers_count),str(tweet.user.friends_count),hashTags,mentions])
+            writer.writerow([tweet.user.screen_name,tweet.created_at,tweet.id_str,tweet.text,str(tweet.retweet_count),tweet.user.name, tweet.user.location, str(tweet.user.url),tweet.user.description,str(tweet.user.statuses_count),str(tweet.user.followers_count),str(tweet.user.friends_count),hashTags,mentions])
+          except tweepy.TweepError as e:
+            print("some error : " + str(e) + " for user: " + user)
+            break
 
         tweetCount += len(new_tweets)
         print("Downloaded {0} tweets".format(tweetCount))
