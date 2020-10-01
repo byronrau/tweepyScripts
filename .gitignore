@@ -96,3 +96,4 @@ ENV/
 ehthumbs.db
 Thumbs.db
 myKeys.txt
+config.py
